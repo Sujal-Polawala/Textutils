@@ -20,7 +20,17 @@ function App() {
       type: type
     })
   }
-  const toggleMode = () => {
+  const removebodyclasses = () => {
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+  }
+  const toggleMode = (cls) => {
+    removebodyclasses();
+    document.body.classList.add('bg-'+cls)
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
@@ -32,23 +42,11 @@ function App() {
       showAlert("Light mode has been enabled", "success");
     }
   }
-  // const tmode = () => {
-  //   if (mode === 'light') {
-  //     setMode('green');
-  //     document.body.style.backgroundColor = '#8fe9a5';
-  //     showAlert("Green mode has been enabled", "success");
-  //   }
-  //   else {
-  //     setMode('light');
-  //     document.body.style.backgroundColor = 'white';
-  //     showAlert("Light mode has been enabled", "success");
-  //   }
-  // }
   return (
     <>
     <Router>
-      {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} tmode={tmode}/> */}
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /> */}
       <Alert alert={alert}/>
       <div className="container my-3">
       <Switch>
