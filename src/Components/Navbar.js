@@ -18,13 +18,14 @@ export default function Navbar(props) {
               </li>
             </ul>
             <div className="d-flex"> 
-              <div className="bg-primary rounded mx-2" onClick={()=> {props.toggleMode('primary')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+              {/* <div className="bg-primary rounded mx-2" onClick={()=> {props.toggleMode('primary')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
               <div className="bg-danger rounded mx-2" onClick={()=> {props.toggleMode('danger')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
               <div className="bg-success rounded mx-2" onClick={()=> {props.toggleMode('success')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
-              <div className="bg-warning rounded mx-2" onClick={()=> {props.toggleMode('warning')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
+              <div className="bg-warning rounded mx-2" onClick={()=> {props.toggleMode('warning')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div> */}
+              {props.mode === 'light'?
+              <div className="bg-dark rounded mx-2" onClick={()=> {props.toggleMode('dark')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>:
               <div className="bg-light rounded mx-2" onClick={()=> {props.toggleMode('light')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
-              <div className="bg-dark rounded mx-2" onClick={()=> {props.toggleMode('dark')}} style={{height: '30px', width: '30px', cursor: 'pointer'}}></div>
-
+              }
               {/* <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button className="btn btn-outline-primary" type="submit">Search</button> */}
             </div>
